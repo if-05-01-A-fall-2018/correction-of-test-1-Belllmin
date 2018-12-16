@@ -1,0 +1,57 @@
+#Ich habe alles gelöscht, weil bei mir alles falsch war...
+
+"Geben Sie bitte eine Zahl ein: <1-6>: "
+inc 12 #Speicherplatz für jede Variable reservieren
+
+lit 0
+lit 42
+lit 43
+out 2
+
+#Einlesen 1
+la 0 32 #Erste Zahl
+la 0 36         
+in 0
+
+lit 0
+lit 42
+lit 43
+out 2
+
+#Einlesen 2
+la 0 36 #Zweite Zahl
+la 0 40         
+in 0
+
+lv 0 32 # Value von Zahl 1
+lv 0 36 # Value von Zahl 2
+rel 2   # Check, ob Zahl 1 == Zahl 2
+tjmp .muliply_sums
+jmp .add_both 
+
+.muliply_sums
+la 0 40 # Result addresse laden
+lv 0 32
+lv 0 36
+add
+lit 2
+mul
+sto
+jmp .end
+
+.add_both
+la 0 40
+lv 0 32
+lv 0 36
+add
+sto
+jmp .end
+
+
+.end
+lv 0 40 
+lit 1                 
+out 0
+out 3
+
+halt
